@@ -22,7 +22,7 @@ jobs:
 
     strategy:      
       matrix:        
-        node-version: [12.18.3]
+        node-version: [18.17.1]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:      
@@ -35,6 +35,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Git checkout
         uses: actions/checkout@v2
+
+      # Set the working directory to /app
+      - name: Set working directory
+        run: cd /app
 
       # Install packages
       - name: Install packages
