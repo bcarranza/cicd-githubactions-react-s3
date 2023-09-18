@@ -36,20 +36,16 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
 
-      # Set the working directory to /app
-      - name: Set working directory
-        run: cd /app
-
       # Install packages
       - name: Install packages
         run: |
-          npm install
+          npm install --prefix ./app
 
       # Build an optimized production build
       - name: Production build      
         run: |        
           unset CI
-          npm run build    
+          npm run build --prefix ./app 
 
       # Deploy to the S3 server
       - name: Deploy to S3
