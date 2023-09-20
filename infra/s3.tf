@@ -1,7 +1,14 @@
 resource "aws_s3_bucket" "www_bucket" {
   bucket = var.bucket_name
-
   tags = var.common_tags
+}
+
+resource "aws_s3_bucket_ownership_controls" "this" {
+  bucket = aws_s3_bucket.www_bucket.id
+
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
 }
 
 resource "aws_s3_bucket_website_configuration" "www_bucket" {
@@ -33,7 +40,7 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
         Effect    = "Allow"
         Principal = "*"
         Action = [
-          "s3:GetObject"
+          "s3:*",
         ]
         Resource = [
           "${aws_s3_bucket.www_bucket.arn}/*"
