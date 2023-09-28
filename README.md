@@ -58,8 +58,44 @@ To get this CI/CD pipeline up and running, follow these steps:
   terraform init
   terraform apply
 ```
-## Explanation of Pipeline YAML
+# Explanation of Pipeline YAML
+Name: CI
 
+Summary: This pipeline is triggered on push or pull request events to the main branch. It runs a single job called build which builds and deploys the code to the S3 server.
+
+On:
+
+    push: Triggers the workflow on push events to the main branch.
+    pull_request: Triggers the workflow on pull request events to the main branch.
+    workflow_dispatch: Allows you to run the workflow manually from the Actions tab.
+
+Jobs:
+
+    build:
+
+This job runs on the ubuntu-latest runner and uses the node-version matrix strategy to run the build on different versions of Node.js. The steps in this job are:
+
+    Use Node.js ${{ matrix.node-version }}: Sets the Node.js version to the value specified in the matrix.
+    Git checkout: Checks out the repository under $GITHUB_WORKSPACE.
+    Install packages: Installs the required packages using npm.
+    Production build: Builds an optimized production build using npm.
+    Deploy to S3: Deploys the build to the S3 server using the jakejarvis/s3-sync-action.
+
+Environments:
+
+    `AWS_S3_BUCKET:** The name of the S3 bucket to deploy to.
+    `AWS_ACCESS_KEY_ID:** The AWS access key ID.
+    `AWS_SECRET_ACCESS_KEY:** The AWS secret access key.
+    `AWS_REGION:** The AWS region.
+    `SOURCE_DIR:** The directory containing the build artifacts.
+
+How to use the pipeline:
+
+To use the pipeline, simply push or pull request your code changes to the main branch. The pipeline will be triggered automatically and will build and deploy your code to the S3 server. You can also run the pipeline manually from the Actions tab.
+
+Summary for DevOps engineers:
+
+This pipeline is a basic example of a CI/CD pipeline that can be used to build and deploy code to the S3 server. It can be customized to meet the specific needs of your project. For example, you may want to add additional jobs to test your code or to deploy it to different environments.
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
