@@ -100,9 +100,6 @@ This pipeline is a basic example of a CI/CD pipeline that can be used to build a
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-In this updated README, I've added instructions for running the Terraform code in the `infra` folder and provided an explanation of the key sections of the `deploy.yml` GitHub Actions workflow file. Please adapt the instructions and configuration details to match your specific project setup and requirements.
-
-
 ## references
 
 - https://medium.com/@sharathvignesh/ci-cd-deploy-react-app-to-aws-s3-using-github-actions-3f6d77783190 
