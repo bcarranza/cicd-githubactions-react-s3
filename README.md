@@ -51,6 +51,15 @@ To get this CI/CD pipeline up and running, follow these steps:
    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
 ```
 
+1.3 Create your own variables in a file: terraform.tfvars
+```shell
+   bucket_name = "value"
+   
+   common_tags = {
+       Project = "Game App"
+   }
+```
+
 2. Navigate to the infra folder and provision the AWS infrastructure using Terraform:
 
 ```shell
