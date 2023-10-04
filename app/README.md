@@ -2,4 +2,4 @@
 
 ## Pokedex 
 
-Using the open pokemon API (http://pokeapi.co/ *) build a pokedex with the
+Using the open pokemon API (http://pokeapi.co/ *) build a pokedex
