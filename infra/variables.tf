@@ -1,6 +1,6 @@
 variable "bucket_name" {
     type = string
-    description = "The name of the bucket"
+    description = "908344923246-mypokedex"
   
 }
 

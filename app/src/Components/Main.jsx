@@ -55,7 +55,7 @@ const Main = () => {
             <nav className="navbar navbar-dark bg-dark">
                 <a className="navbar-brand poke-nav" href="#">
                     <img src={logo} width="40" height="40" className="d-inline-block align-top" alt=""/>&nbsp;
-                    Poke App - BC
+                    Poke App - Ivan PC
                 </a>
             </nav>
             <div className="container">
