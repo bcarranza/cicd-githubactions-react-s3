@@ -1,7 +1,6 @@
 variable "bucket_name" {
     type = string
-    description = "The name of the bucket"
-  
+    description = "855540625510-pokedexbucket"
 }
 
 variable "common_tags" {
