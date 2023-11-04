@@ -1,10 +1,9 @@
-import React from "react";
-import { useEffect, useState } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 import Card from "./Card";
 
-import './style.css'
 import logo from '../poke-logo.jpeg';
+import './style.css';
 
 const Main = () => {
     const [pokeData , setPokeData] = useState([]);
@@ -55,7 +54,7 @@ const Main = () => {
             <nav className="navbar navbar-dark bg-dark">
                 <a className="navbar-brand poke-nav" href="#">
                     <img src={logo} width="40" height="40" className="d-inline-block align-top" alt=""/>&nbsp;
-                    Poke App - BC
+                    Poke App - Jose De La Torre - JDLT
                 </a>
             </nav>
             <div className="container">
